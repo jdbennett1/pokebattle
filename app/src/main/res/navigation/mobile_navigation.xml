@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/startBattle">
+
+
+    <fragment
+        android:id="@+id/startBattle"
+        android:name="com.example.pokebattle.fragments.StartBattle"
+        android:label="fragment_start_battle"
+        tools:layout="@layout/fragment_start_battle" >
+        <action
+            android:id="@+id/action_startBattle_to_choosePoke2"
+            app:destination="@id/choosePoke2" />
+        <action
+            android:id="@+id/action_startBattle_to_pokemonView4"
+            app:destination="@id/pokemonView4" />
+    </fragment>
+    <fragment
+        android:id="@+id/choosePoke2"
+        android:name="com.example.pokebattle.fragments.ChoosePoke"
+        android:label="fragment_choose_poke"
+        tools:layout="@layout/fragment_choose_poke" >
+        <action
+            android:id="@+id/action_choosePoke2_to_pokeAttack"
+            app:destination="@id/pokeAttack" />
+        <action
+            android:id="@+id/action_choosePoke2_to_startBattle"
+            app:destination="@id/startBattle" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokeAttack"
+        android:name="com.example.pokebattle.fragments.PokeAttack"
+        android:label="fragment_poke_attack"
+        tools:layout="@layout/fragment_poke_attack" >
+        <action
+            android:id="@+id/action_pokeAttack_to_choosePoke2"
+            app:destination="@id/choosePoke2" />
+        <action
+            android:id="@+id/action_pokeAttack_to_battleResults"
+            app:destination="@id/battleResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonView4"
+        android:name="com.example.pokebattle.fragments.PokemonView"
+        android:label="fragment_pokemon_view"
+        tools:layout="@layout/fragment_pokemon_view" >
+        <action
+            android:id="@+id/action_pokemonView4_to_startBattle"
+            app:destination="@id/startBattle" />
+    </fragment>
+    <fragment
+        android:id="@+id/battleResults"
+        android:name="com.example.pokebattle.fragments.BattleResults"
+        android:label="fragment_battle_results"
+        tools:layout="@layout/fragment_battle_results" >
+        <action
+            android:id="@+id/action_battleResults_to_startBattle"
+            app:destination="@id/startBattle" />
+    </fragment>
+</navigation>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_pokeattack"
+    tools:context=".fragments.PokeAttack"
+    android:background="@color/red"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.pokebattle.model.BattleViewModel" />
+
+        <variable
+            name="PokeAttack"
+            type="com.example.pokebattle.fragments.PokeAttack" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/attack_select"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="75dp"
+                android:textSize="30dp"
+                android:text="Choose An Attack"
+                />
+
+            <RadioGroup
+                android:id="@+id/attack_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/attack_select">
+
+                <RadioButton
+                    android:id="@+id/attack1"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:onClick='@{() -> viewModel.setAttack(viewModel.pokemon.attack_1, viewModel.enemy.attack_1)}'
+                    android:text='@{viewModel.pokemon.description_1}'
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pokemon_options" />
+                <TextView
+                    android:id="@+id/description1.5"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="20dp"
+                    android:text='POWER:'
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/attack1"
+                    />
+                <TextView
+                    android:id="@+id/description1"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="20dp"
+                    android:text='@{viewModel.pokemon.FormattedAttack1}'
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/attack1"
+                    />
+
+                <RadioButton
+                    android:id="@+id/attack2"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:onClick='@{() -> viewModel.setAttack(viewModel.pokemon.attack_2, viewModel.enemy.attack_2)}'
+                    android:text='@{viewModel.pokemon.description_2}'
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/description1" />
+                <TextView
+                    android:id="@+id/description2.5"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="20dp"
+                    android:text='POWER:'
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/attack2"
+                    />
+
+                <TextView
+                    android:id="@+id/description2"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text='@{viewModel.pokemon.FormattedAttack2}'
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/attack2" />
+
+            </RadioGroup>
+
+
+            <Button
+                android:id="@+id/battle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Battle!"
+                android:layout_marginLeft="100dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/attack_options"
+                android:onClick="@{() -> PokeAttack.goToNextScreen()}"/>
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> PokeAttack.goBackToScreen()}"
+                android:text="back "
+                app:layout_constraintStart_toEndOf="@+id/battle"
+                app:layout_constraintTop_toBottomOf="@+id/attack_options" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_choosepoke"
+    tools:context=".fragments.ChoosePoke"
+    android:background="@color/grass">
+
+        <data>
+                <variable
+                    name="viewModel"
+                    type="com.example.pokebattle.model.BattleViewModel" />
+
+                <variable
+                    name="ChoosePoke"
+                    type="com.example.pokebattle.fragments.ChoosePoke" />
+        </data>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/pokemon_select"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textSize="30dp"
+                            android:text="Choose A Pokemon"
+                                />
+
+                        <RadioGroup
+                            android:id="@+id/pokemon_options"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/pokemon_select">
+
+                                <ImageView
+                                    android:id="@+id/image_pokemon"
+                                    android:layout_width="160dp"
+                                    android:layout_height="160dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/pokemon_options"
+                                    android:src="@drawable/chard"
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/pokemon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:onClick='@{() -> viewModel.setPokemon("charizard")}'
+                                    android:text='@{viewModel.cardInfo["charizard"].name}'
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/image_pokemon" />
+
+                                <ImageView
+                                    android:id="@+id/image_pokemon2"
+                                    android:layout_width="160dp"
+                                    android:layout_height="160dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/pokemon"
+                                    app:srcCompat="@drawable/snore"
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/pokemon2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:onClick='@{() -> viewModel.setPokemon("snorelax")}'
+                                    android:text='@{viewModel.cardInfo["snorelax"].name}'
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/image_pokemon2" />
+
+                                <ImageView
+                                    android:id="@+id/image_pokemon3"
+                                    android:layout_width="160dp"
+                                    android:layout_height="160dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/pokemon2"
+                                    app:srcCompat="@drawable/venus"
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/pokemon3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:onClick='@{() -> viewModel.setPokemon("venusaur")}'
+                                    android:text='@{viewModel.cardInfo["venusaur"].name}'
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/image_pokemon3" />
+
+                                <ImageView
+                                    android:id="@+id/image_pokemon4"
+                                    android:layout_width="160dp"
+                                    android:layout_height="160dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/pokemon3"
+                                    app:srcCompat="@drawable/blast"
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/pokemon4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:onClick='@{() -> viewModel.setPokemon("blastoise")}'
+                                    android:text='@{viewModel.cardInfo["blastoise"].name}'
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/image_pokemon4" />
+
+                                <ImageView
+                                    android:id="@+id/image_pokemon5"
+                                    android:layout_width="160dp"
+                                    android:layout_height="160dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/pokemon4"
+                                    app:srcCompat="@drawable/arc" />
+
+                                <RadioButton
+                                    android:id="@+id/pokemon5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:onClick='@{() -> viewModel.setPokemon("arcanine")}'
+                                    android:text='@{viewModel.cardInfo["arcanine"].name}'
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/image_pokemon5" />
+
+                                <ImageView
+                                    android:id="@+id/image_pokemon6"
+                                    android:layout_width="160dp"
+                                    android:layout_height="160dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/pokemon5"
+                                    app:srcCompat="@drawable/grou"
+                                    />
+
+                                <RadioButton
+                                    android:id="@+id/pokemon6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:onClick='@{() -> viewModel.setPokemon("groudon")}'
+                                    android:text='@{viewModel.cardInfo["groudon"].name}'
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/image_pokemon6" />
+                        </RadioGroup>
+
+                        <Button
+                            android:id="@+id/battle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Battle!"
+                            android:layout_marginLeft="100dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/pokemon_options"
+                            android:onClick="@{() -> ChoosePoke.goToNextScreen()}"/>
+
+                        <Button
+                            android:id="@+id/cancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{() -> ChoosePoke.goBackToScreen()}"
+                            android:text="back "
+                            app:layout_constraintStart_toEndOf="@+id/battle"
+                            app:layout_constraintTop_toBottomOf="@+id/pokemon_options" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+</layout>
